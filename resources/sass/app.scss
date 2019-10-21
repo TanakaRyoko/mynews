@@ -1,14 +1,11 @@
-//Fonts
-@important url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-//Variables
-@important "variables";
+// Variables
+@import "variables";
 
-//Bootstrap
-@important '~bootstrap/scss/bootstrap';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
-//Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
-$font-height-base: 1.6;
+
 
