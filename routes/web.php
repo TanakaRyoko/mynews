@@ -32,7 +32,7 @@ Route::group(["prefix" => "admin","middleware" => 'auth'],function(){
 
 Route::group(["prefix" => "admin","middleware" => 'auth'],function(){
     Route::get('profile/edit', 'Admin\ProfileController@edit');
-    Route::get('profile/edit', 'Admin\ProfileController@update');
+    Route::post('profile/edit', 'Admin\ProfileController@update');
 });
 Auth::routes();
 
@@ -44,3 +44,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 use App\News;
 class NewsController extends Controller
 {
-    //
-    public function add()
+       public function add()
 {
-return view("admin.news.create");
+            return view("admin.news.create");
 }
 
-public function create(Request $request)
+        public function create(Request $request)
 {
 
     //Varidationを行う
@@ -23,8 +22,8 @@ public function create(Request $request)
     $form=$request->all();
     
     //フォームから画像が送信されてきたら、保存して、$news->image_pathに画像のパスを保存する。
-    if(asset($form['image'])){
-        $path=$request->file('image')->store('pablic'/'image');
+    if(isset($form['image'])){
+        $path=$request->file('image')->store('public/image');
         $news->image_path=basename($path);
     }else{
         $news->image_path=null;
