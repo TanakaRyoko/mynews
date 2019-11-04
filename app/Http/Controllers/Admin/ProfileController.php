@@ -12,8 +12,20 @@ public function add()
       return view('admin.profile.create');
   }
 
-  public function create(Request $request)
+public function create(Request $request)
   {
+    //Varidationを行う
+    $this->validate($request,profile::$rules);
+    $profile=new profile;
+    $form=$request->all();
+  
+    //フォームから送信されてきた_tokenを削除する
+    unset($form['_token']);
+   
+    
+    //データベースに保存する
+    $profile->fill($form);
+    $profile->save();
     
       return redirect('admin/profile/create');
   }
