@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 
 use App\Profile;
+use App\ProfileHistory;
+
+use Carbon\Carbon;
 class ProfileController extends Controller
 {
 public function add()

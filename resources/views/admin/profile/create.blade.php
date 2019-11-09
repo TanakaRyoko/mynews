@@ -23,7 +23,7 @@
                     
                     
                     <!--氏名-->
-                    <div class="form-froup row">
+                    <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="name" value="{{old("name")}}">
@@ -32,7 +32,7 @@
                     
                     
                     <!--性別-->
-                    <div class="form-group row">
+                    <div class= "form-group row">
                         <label class="col-md-2">性別</label>
                             <div class="radio">
                                 <input type="radio" value="1" name="gender" id="man">
