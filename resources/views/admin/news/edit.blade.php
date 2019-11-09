@@ -18,7 +18,10 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control"name="title" value="{{$news_form->tile}}">
+                            <!-- タイトルの履歴が残るようにした　-->
+                            <textarea class="form-control" name="title" >{{ $news_form->title}}</textarea>
+                            <!--<input type="text" class="form-control"name="title" value="{{$news_form->tile}}"> 
+                            元のコードだとタイトルの履歴が残らない-->
                         </div>
                 </div>
                 <div class="form-group row">
@@ -53,7 +56,7 @@
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">
-                            @if ($news_form->histories as $histories ! =NULL)
+                            @if ($news_form->histories !=NULL)
                                 @foreach ($news_form->histories as $history)
                                     <li class ="list-group-item">{{ $history->edited_at}}</li>
                                  @endforeach

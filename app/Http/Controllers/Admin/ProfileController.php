@@ -34,10 +34,79 @@ public function create(Request $request)
 
  public function edit()
  {
- return view('admin.profile.edit');
+   
+  // Profiles Modelからデータを取得する
+$profile = new Profile;
+if (empty($profile)) {
+abort(404);
+
+}
+return view('admin.profile.edit', ['profile_form' => $profile]);
  }
- public function update()
+ 
+ public function update(Request $request)
  {
+     //validationをかける
+     $this ->validate($request, Profile::$rules);
+     //Profile Modelからデータを取得する
+     $profile=Profile::find($request->id);
+     //送信されてきたフォームデータを格納する
+     $profile_form ->all();
+     
+     unset($profile_form['_token']);
+     
+     $profile->fill($profile_form)->save();
+     
+     
+     $history=new History;
+     $history->profile_id=$profile->id;
+     $history->edited_at=Carbon::now();
+     $history->save();
+     
  return redirect('admin/profile/edit');
  }    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

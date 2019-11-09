@@ -65,6 +65,10 @@ class NewsController extends Controller
             abort(404);
         }
         return view('admin.news.edit',['news_form' =>$news]);
+        
+        
+
+        
     }
     public function update(Request $request)
     {
@@ -78,7 +82,10 @@ class NewsController extends Controller
             $news_form['image_path']=null;
         }elseif($request ->file('image')){
             $path =$request->file('image')->store('public/image');
+            $news_form['image_path'] = basename($path);
+        }else{
             $news_form['image_path']=$news ->image_path;
+        
         }
         
         unset($news_form['_token']);
@@ -87,7 +94,7 @@ class NewsController extends Controller
         $news->fill($news_form)->save();
         
         $history =new History;
-        $history->new_id =$news->id;
+        $history->news_id =$news->id;
         $history->edited_at =Carbon::now();
         $history->save();
         
