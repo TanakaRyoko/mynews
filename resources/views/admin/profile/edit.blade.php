@@ -25,27 +25,23 @@
                      <!-- 性別 -->
                      <div class= "form-group row">
                         <label class="col-md-2">性別</label>
-                            <div class="radio">
-                                <input type="radio" value="1" name="gender" id="man">
-                                    <label for="man">男性</label>
-                            </div>
-                            <div class="radio">
-                                <input type="radio" value="2" name="gender" id="woman">
-                                    <label for="woman">女性</label>
-                            </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
+                        </div>
                     </div>
+                    
                    <!-- 趣味 -->
                     <div class= "form-group row">
                         <label class="col-md-2" for="hobby">趣味</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="hobby"rows="5" value="{{$profile_form->name}}">
+                            <textarea class="form-control" name="hobby" rows="5">{{$profile_form->hobby}}</textarea>
                         </div>
                     </div>
                     <!-- 自己紹介 -->
                     <div class= "form-group row">
                         <label class="col-md-2" for="introduction">自己紹介</label>
                             <div class="col-md-10">
-                                <textarea class="form-control" name="hobby" rows="5">{{$profile_form->name}}</textarea>
+                                <textarea class="form-control" name="introduction" rows="5">{{$profile_form->introduction}}</textarea>
                             </div>
                     </div>
                         <input type="hidden" name="id" value="{{$profile_form->id}}">
@@ -57,8 +53,8 @@
                         <h2>編集履歴</h2>
                         <ul class="list-group">
                             @if($profile_form->profilehistories !=NULL)
-                                @foreach($profile_form->profilehistories as $history)
-                                <li class ="list-group-item">{{ $history -> edited_at}}</li>
+                                @foreach($profile_form->profilehistories as $profile_histories)
+                                <li class ="list-group-item">{{ $profile_histories -> edited_at}}</li>
                                 @endforeach
                             @endif
                         </ul>
