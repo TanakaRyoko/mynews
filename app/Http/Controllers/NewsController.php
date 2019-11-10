@@ -11,15 +11,15 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = News::all() ->sortByDsc('updated_at');
+        $posts = News::all() ->sortByDesc('updated_at');
         
-        if(count($posts)>0){
-            $headline=$posts->shift();
+        if (count($posts) > 0) {
+            $headline = $posts->shift();
         }else{
-            $headline=null;
+            $headline = null;
         }
         //news/index.blade.phpファイルを渡している
         //またView テンプレートに　headline、posts、という変数を渡している
-        return views('news.index',['headline'=>$headline,'post'=>$posts]);
+        return view('news.index',['headline'=> $headline,'posts'=>$posts]);
         }
 }
