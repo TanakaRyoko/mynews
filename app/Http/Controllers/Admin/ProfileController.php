@@ -82,7 +82,7 @@ public function index(Request $request){
      $profile_histories->edited_at=Carbon::now();
      $profile_histories->save();
      
- return redirect('admin/profile/edit');
+ return redirect('admin/profile');
  }  
  
  public function delete(Request $request){ 

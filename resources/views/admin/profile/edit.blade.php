@@ -26,7 +26,7 @@
                      <div class= "form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
+                            <textarea class="form-control" name="gender" >{{ $profile_form->gender}}</textarea>
                         </div>
                     </div>
                     

@@ -1,11 +1,11 @@
 body {
- color: #000;
+  color: #000;
 }
 
 .header {
   .logo {
-    width: 120px;
-    height: 82px;
+      width: 120px;
+      height: 82px;
   }
 }
 
@@ -13,24 +13,24 @@ body {
   .caption {
     position: relative;
     width: 350px;
-    .image{
-      img{
+    .image {
+      img {
     width: 100%;
       }
     }
-.title {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  h1 {
-  color: #fff;
-  font-size: 1.2em;
+    .title {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      h1 {
+    color: #fff;
+    font-size: 1.2em;
+      }
     }
-  }
-  .body {
-    font-size: 0.8em;
+    .body {
+      font-size: 0.8em;
     }
   }
 }
@@ -41,20 +41,24 @@ body {
       font-size: 0.6em;
       color: #999999;
     }
-  .title {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  .body {
-    font-size: 0.8em;
+    .title {
+      font-size: 1.2em;
+      font-weight: bold;
     }
-  .image {
-    img {
-  width: 250px;
+    .body {
+      font-size: 0.8em;
+    }
+    .image {
+      img {
+    width: 250px;
       }
     }
   }
 }
+
+
+
+
 
 
 
