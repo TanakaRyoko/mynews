@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h2>プロフィール一覧</h2>
+        <h2>マイプロフィール</h2>
     </div>
                         
         <div class="row">
@@ -24,15 +24,13 @@
                         </thead>
                                     
                         <tbody>
-                           @foreach($profiles as $profile) 
                                 <tr>
-                                    <td>{{ $profile->id }}</td>
-                                    <td>{{ $profile->name }}</td>
-                                    <td>{{ $profile->gender }}</td>
-                                    <td>{{ \Str::limit($profile->hobby,150) }}</td>
-                                    <td>{{ \Str::limit($profile->introduction,250) }}</td>
+                                    <td>{{ $profiles->id }}</td>
+                                    <td>{{ $profiles->name }}</td>
+                                    <td>{{ $profiles->gender }}</td>
+                                    <td>{{ \Str::limit($profiles->hobby,150) }}</td>
+                                    <td>{{ \Str::limit($profiles->introduction,250) }}</td>
                                 </tr>
-                            @endforeach
                         </tbody>
                    </table>
                 </div>

@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function index(Request $request){
         
-        $profiles =profile::all()->sortByDesc('updated_at');
+        $profiles =profile::find($request->id);
         return view('profile.index', ['profiles' => $profiles]);
     }
 }
