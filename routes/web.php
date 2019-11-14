@@ -35,21 +35,9 @@ Route::group(["prefix" => "admin","middleware" => 'auth'],function(){
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/','NewsController@index');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/','NewsController@index');
+    //プロフィール表示用
+    Route::get('/profile','ProfileController@index');
