@@ -20,8 +20,8 @@ public function add()
 public function create(Request $request)
   {
     //Varidationを行う
-    $this->validate($request,profile::$rules);
-    $profile=new profile;
+    $this->validate($request,Profile::$rules);
+    $profile=new Profile;
     $form=$request->all();
   
     //フォームから送信されてきた_tokenを削除する
@@ -87,7 +87,7 @@ public function index(Request $request){
  
  public function delete(Request $request){ 
       
-       $profile = Profile::find($request->id); 
+       $profile =Profile::find($request->id); 
         
        $profile->delete(); 
        return redirect('admin/profile/'); 

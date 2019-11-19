@@ -8,8 +8,7 @@ class Profile extends Model
 {
     protected $guarded =array('id');
     
-    ////DBのテーブル名が単数形のため、laravelで複数形で扱われないように明示的に定義
-    public $table = 'profile';
+    
     
      public static $rules = array(
         'name' => 'required',
