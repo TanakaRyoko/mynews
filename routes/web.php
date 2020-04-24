@@ -41,3 +41,7 @@ Auth::routes();
     Route::get('/','NewsController@index');
     //プロフィール表示用
     Route::get('/profile','ProfileController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
